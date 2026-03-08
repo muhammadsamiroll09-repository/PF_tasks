@@ -1,19 +1,24 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-main(){
-int t,vi,a,vf;
+main()
+{
+    int temp1,temp2,diff;
 
-cout<<"Enter a : ";
-cin>>a;
+     cout<<"Enter the temperture of city 1 (in Celcius) : ";
+    cin>>temp1;
 
-cout<<"Enter vi : ";
-cin>>vi;
+     cout<<"Enter the temperture of city 2 (in Celcius) : ";
+    cin>>temp2;
 
-cout<<"Enter t : ";
-cin>>t;
+    diff=temp1-temp2;
 
-vf=(a*t)+vi;
+    if(diff>10){
+        cout<<"The difference is big ";
+    }
 
-cout<<"The vf : "<<vf;
+
+
+
+
 
 }

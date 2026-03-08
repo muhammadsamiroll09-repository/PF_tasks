@@ -1,20 +1,39 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 main(){
-string name;
-int weight,days;
+    
+    float speed;
+    cout<<"Enter the speed : ";
+    cin>>speed;
 
-cout<<"Enter your name : ";
-cin>>name;
+    if(speed>0){
 
-cout<<"Enter your weright in kg's : ";
-cin>>weight;
+    if(speed<=10){
+        cout<<"Speed is slow";
+    }
 
-days=weight*15;
+    if(speed>10){
+        if(speed<=50){
+        cout<<"Speed is average";
+        }
+    }
 
-cout<<"No. of days req to lose "<<weight<<"kg of weight is : "<<days<<" days";
+    if(speed>50){
+        if(speed<=150){
+        cout<<"Speed is fast";
+    }
+    }
 
+    if(speed>150){
+        if(speed<=1000)
+        cout<<"Ultra Fast";
+    }
 
+    if(speed>1000){
+        cout<<"Speed is extremely fast";
+    }
+
+}
 
 
 

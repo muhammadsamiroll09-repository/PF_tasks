@@ -1,20 +1,21 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-main(){
+main()
+{
+    int speed;
 
-int fps,time,seconds,no_of_frames;
+    cout << "Enter the speed of your car (in km/h) : ";
+    cin >> speed;
 
-cout<<"Enter the FPS : ";
-cin>>fps;
-
-cout<<"Enter the times(in Mins) : ";
-cin>>time;
-seconds=time*60;
-
-no_of_frames=seconds*fps;
-
-cout<<"The no. of frames : "<<no_of_frames;
-
+    if (speed > 0)
+    {
+        if (speed <= 100)
+        {
+            cout << "Perfect! You are going good.";
+        }
+        else
+        {
+            cout << "Halt...YOU WILL BE CHALLANED!!! ";
+        }
+    }
 }
-
-
