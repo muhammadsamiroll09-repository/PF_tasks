@@ -1,21 +1,13 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-main()
-{
-    int speed;
-
-    cout << "Enter the speed of your car (in km/h) : ";
-    cin >> speed;
-
-    if (speed > 0)
-    {
-        if (speed <= 100)
-        {
-            cout << "Perfect! You are going good.";
-        }
-        else
-        {
-            cout << "Halt...YOU WILL BE CHALLANED!!! ";
-        }
+main(){
+    int sum=0;
+    int i=1;
+    while(i<=5){
+        sum=sum+i;
+        i=i+1;
     }
+    cout<<"Sum of first 5 natural No.'s : "<<sum;
+
+    
 }

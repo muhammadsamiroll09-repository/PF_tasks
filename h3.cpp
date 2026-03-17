@@ -1,24 +1,20 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-main()
-{
-    int temp1,temp2,diff;
+main(){
+     cout<<"Enter the no. of term terms you want of Fibonacci seq : ";
+     int number;
+     cin>>number;
 
-     cout<<"Enter the temperture of city 1 (in Celcius) : ";
-    cin>>temp1;
+     int n1=0,n2=1,nextnum;
+     cout<<n1<<","<<n2;
 
-     cout<<"Enter the temperture of city 2 (in Celcius) : ";
-    cin>>temp2;
-
-    diff=temp1-temp2;
-
-    if(diff>10){
-        cout<<"The difference is big ";
-    }
-
-
-
-
+     for (int x=1;x<=number-2;x=x+1){
+        nextnum=n1+n2;
+        cout<<","<<nextnum;
+        n1=n2;
+        n2=nextnum;
+        
+     }
 
 
 }

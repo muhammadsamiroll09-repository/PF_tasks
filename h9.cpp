@@ -1,23 +1,21 @@
 #include<iostream>
 using namespace std;
 main(){
-cout<<"Enter the four digit no. : ";
-int fourdigits_no;
-cin>>fourdigits_no;
+    int number ;
+    cout<<"Enter number : ";
+    cin>>number;
 
-int forthvalue=fourdigits_no%10;
-int threedigits_no=fourdigits_no/10;
+    int digit,frequency=0;
+    cout<<"Enter digit : ";
+    cin>>digit;
 
-int thirdvalue=threedigits_no%10;
-int twogigits_no=threedigits_no/10;
-
-int seondvalue=twogigits_no%10;
-
-int firstvalue=twogigits_no/10;
-
-cout<<"Sum of the four digits in four digits value is : "<<forthvalue+thirdvalue+seondvalue+firstvalue;
-
-
+    for(int i=number;i>0;i=i/10){ // no. = 323
+        if(i%10==digit){          // digit = 3
+            frequency=frequency+1;
+        }
+    
+    }
+ cout<<"Frequency of "<<digit<<" in "<<number<<" : "<<frequency;
 
 
 }

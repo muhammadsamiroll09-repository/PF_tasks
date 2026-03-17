@@ -1,17 +1,17 @@
 #include<iostream>
 using namespace std;
 main(){
-cout<<"Enter the person's age : ";
+    cout<<"Enter the positive integer : ";
+    int num;
+    cin>> num;
 
-int age;
-cin>>age;
+    while(num<=0){
+        cout<<"Error "<<num<<" is not a positive integer\n"<<"Please enter a positive integer : ";
+        cin>>num;
+        
+    }
 
-cout<<"Enter the NO. of times house changed : ";
-int N;
-cin>>N;
+    cout<<"Program End ";
 
-int den=N+1;
- 
-cout<<"Average no of years spend in each house : "<<age/den;
 
 }

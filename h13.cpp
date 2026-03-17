@@ -1,33 +1,36 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 main(){
-int a,b=0;
+     int number1,n1, number2,n2,hcf;
+    int remainder;
 
-cout<<"Enter the first integer:";
-cin>>a;
+    cout << "Enter the first no. : ";
+    cin >> number1;
+    n1=number1;
 
-b=b+a;
+    cout << "Enter the second no. : ";
+    cin >> number2;
+    n2=number2;
 
-cout<<"Enter the second integer:";
-cin>>a;
+    while(remainder!=0){
+        if(n1>n2){
+            remainder=n1%n2; 
+            n1=n2;
+            n2=remainder;
+            hcf=n1;
+        }
+        else{
+            remainder=n2%n1;
+            n2=n1;
+            n1=remainder;
+            hcf=n2;
+        }
+    }
+        cout<<"H.C.F of "<<number1<<" and "<<number2<<" : "<<hcf<<endl;
+        cout<<"L.C.M of "<<number1<<" and "<<number2<<" : "<<number1*number2/(hcf*1.0);
 
-b=b+a;
 
-cout<<"Enter the third integer:";
-cin>>a;
+        
+    }
 
-b=a+b;
-
-cout<<"Enter the fourth integer:";
-cin>>a;
-
-b=a+b;
-
-cout<<"Enter the fifth integer:";
-cin>>a;
-
-b=a+b;
-
-cout<<"Sum is : "<<b;
-
-}
+    

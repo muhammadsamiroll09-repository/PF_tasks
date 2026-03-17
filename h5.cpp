@@ -1,40 +1,18 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 main(){
-    
-    float speed;
-    cout<<"Enter the speed : ";
-    cin>>speed;
+    string name;
+    cout<<"Enter the name : ";
+    cin>>name;
 
-    if(speed>0){
-
-    if(speed<=10){
-        cout<<"Speed is slow";
+    while(name!="END"){
+        cout<<"HELLO "<<name<<endl;
+        cout<<"Enter the name : ";
+        cin>>name;
+        
     }
 
-    if(speed>10){
-        if(speed<=50){
-        cout<<"Speed is average";
-        }
+    if(name=="END"){
+        cout<<"END";
     }
-
-    if(speed>50){
-        if(speed<=150){
-        cout<<"Speed is fast";
-    }
-    }
-
-    if(speed>150){
-        if(speed<=1000)
-        cout<<"Ultra Fast";
-    }
-
-    if(speed>1000){
-        cout<<"Speed is extremely fast";
-    }
-
-}
-
-
-
 }
