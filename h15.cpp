@@ -2,40 +2,44 @@
 using namespace std;
 main()
 {
-    int age, machine_price, each_toy_price, money_from_toys,money_saved, money_from_even = 0, toy_count = 0, rem_money, need_money;
+    int choice;
+    while(0==0){
+        cout<<endl<<"---restaurant Management System"<<endl;
+        cout<<"1. View Food Menu"<<endl;
+        cout<<"2. Place order"<<endl;
+        cout<<"3. View Order Status  "<<endl;
+        cout<<"4. Generate bill"<<endl;
+        cout<<"5. Contact staff"<<endl;
+        cout<<"6. Exit"<<endl;
 
-    cout << "Enter lily's age (1-77) :"; 
-    cin >> age;
-    cout << "Enter the price of the machine (1-10,000): ";
-    cin >> machine_price;
-    cout << "Enter the price of each toy :";
-    cin >> each_toy_price;
-
-    for(int i=1;i<=age;i++){
-        if((i%2!=0)){
-            toy_count=toy_count+1;
-        }
-
+        cout<<"Enter your choice (1-6) : ";
+        cin>>choice;
+      
+        if(choice==1){
+        cout<<"You selected : View food menu"<<endl;
+    
     }
-
-    money_from_toys=(each_toy_price*toy_count); 
-
-    for(int i=1;i<=age;i++){
-        if(i%2==0){
-            money_from_even=money_from_even+((10*(i-(i/2)))-1); // -1 :brother 1 cutten
-        }  
+    else if(choice==2){
+       cout<<"You selected : Place order"<<endl;
     }
-
-    money_saved=money_from_even+money_from_toys;
-
-   if(money_saved>=machine_price){
-    rem_money=money_saved-machine_price;
-    cout<<"YES! {"<<rem_money<<"}";
-   }
-
-else{
-    need_money=machine_price-money_saved;
-    cout<<"NO! {"<<need_money<<"}";
+    else if(choice==3){
+        cout<<"You selected : View Order Status "<<endl;
+    }
+    else if(choice==4){
+        cout<<"You selected : Generate bill "<<endl;
+    }
+    else if(choice==5){
+        cout<<"You selected : Contact staff "<<endl;
+    }
+   
+    else if(choice==6){
+        cout<<"You selected : Exit ";
+        break;
+    }
+    else{
+        cout<<"You selected an invalid input ";
+    }
+    }
 
 }
 
@@ -43,4 +47,3 @@ else{
     
 
     
-}
