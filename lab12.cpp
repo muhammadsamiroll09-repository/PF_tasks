@@ -1,18 +1,39 @@
-#include<iostream> 
+#include <iostream>
 using namespace std;
-
-int main()
+// Write a program that takes n numbers from the user, stores them in an array, and passes
+// them to a function that prints them in reverse order.
+main()
 {
-    char ch;
-    cout<<"Are the friends going to university ? (y for\"yes\" and n for \"no\") " ;
-    cin>>ch;
+    int no;
+    int n = 0;
 
-    if(ch=='y'){
-    cout<<"You can go to university";
+    cout << "Enter the amount of no. u want to store in array : ";
+    cin >> no;
+
+    if (no > 0)
+    {
+        
+        int number_in_array[no];
+        for (int i = 0; i < no; i++)
+        {
+            cout << "Enter " << i << " index no. : ";
+            cin >> number_in_array[i];
+        }
+
+        for (int i = no - 1; i >= 0; i--)
+        {
+            n += 1;
+        }
+        n = n - 1;
+
+        for (n; n >= 0; n--)
+        {
+            cout << number_in_array[n];
+        }
     }
-
-    if(ch=='n'){
-         cout<<"You cannot go to university";
+    else
+    {
+        cout << "Please enter +ve no .You enterd a -ve \"" << no << "\" number.";
+        return 0;
     }
-
 }

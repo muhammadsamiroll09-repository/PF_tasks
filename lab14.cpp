@@ -1,18 +1,14 @@
-#include<iostream> 
+#include<iostream>
 using namespace std;
-
-int main()
-{
-    cout<<"Enter your Name (in lower case):";
-    string name;
-    cin>> name;
-
-    if(name=="ali"){
-        cout<<"Congratulate "<<name;
+main(){
+    float totalsum=0;
+    int n;
+    cout<<"Enter the no. of resisters : ";
+    cin>>n;
+    float resisters[n];
+    for(int i=0;i<n;i++){
+        cin>>resisters[n];
+        totalsum=totalsum+resisters[n];
     }
-
-    if(name!="ali"){
-      cout<<"Try again ";
-    }
-
+    cout<<"The resistance of the series circuit : "<<totalsum;
 }

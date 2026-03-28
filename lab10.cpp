@@ -1,48 +1,22 @@
-#include <iostream>
-using namespace std;
-main()
-{
-    string n1, n2, n3;
-    int a, b, c; // ages
+#include<iostream>
+ using namespace std;
+// Write a C++ program to change every letter in a given string with the letter following it 
+// in the alphabet (ie. a becomes b, p becomes q, z becomes a).
+// For Example:
+// Input: aslam
+// Output: btmbn
 
-    cout << "Enter the name of first brother :";
-    cin >> n1;
-    cout << "Enter the age of first brother :";
-    cin >> a;
-
-    cout << "Enter the name of second brother :";
-    cin >> n2;
-    cout << "Enter the age of second brother :";
-    cin >> b;
-
-    cout << "Enter the name of third brother :";
-    cin >> n3;
-    cout << "Enter the age of third  brother :";
-    cin >> c;
-
-    if (a < b){
-        if (a < c)
-        {
-            cout << n1 << " is the younger ";
-        }
-        else
-        {
-            cout << n3 << " is the younger brother";
-        }
-    }
-
-    else
-    {
-        if (b < c){
-        if (b < c)
-        {
-            cout << n2 << " is the younger ";
-        }
-        else
-        {
-            cout << n3 << " is the younger ";
-        }
-        }
- 
+// char ch='a';
+//     ch=ch+1;
+//     cout<<ch;
+main(){
+    string word;
+    char s;
+    cout<<"Enter the word  : ";
+    cin>>word;
+    
+    for(int i=0;word[i]!='\0';i++){
+        s=word[i]+1;
+        cout<<s;
     }
 }
