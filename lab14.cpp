@@ -1,14 +1,25 @@
 #include<iostream>
 using namespace std;
+void futuretime(int hours,int minutes);
+
 main(){
-    float totalsum=0;
-    int n;
-    cout<<"Enter the no. of resisters : ";
-    cin>>n;
-    float resisters[n];
-    for(int i=0;i<n;i++){
-        cin>>resisters[n];
-        totalsum=totalsum+resisters[n];
+     int hours,minutes;
+     cout<<"Enter hours : ";
+     cin>> hours;
+     cout<<"Enter minutes : ";
+     cin>>minutes;
+     futuretime(hours,minutes);
+}
+
+void futuretime(int hours, int minutes){
+    minutes=minutes+15;
+    if(minutes>=60){
+         minutes-=60;
+         hours++;
     }
-    cout<<"The resistance of the series circuit : "<<totalsum;
+
+    if(hours>=24){
+        hours-=24;
+    }
+    cout<<hours<<" : "<<minutes;
 }

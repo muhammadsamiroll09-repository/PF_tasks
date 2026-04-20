@@ -1,37 +1,13 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 main(){
-    string movie_name,m[5]={"Gladiator","Starwars","Terminator","Teleport","Artificial_Intelligence"};
-    float dis_5=500-((5/100.0)*500) , dis_10=500-((10/100.0)*500);
-    
+    float num1,num2,p;
+    cout<<"Enter the base  number : ";
+    cin>>num1;
+    cout<<"Enter the exponent number : ";
+    cin>>num2;
 
-
-    cout<<"Enter movie name : "<<endl<<"";
-    cin>>movie_name;
-
-     for(int i=0;i<5;i++){
-        if(movie_name==m[i]){
-            if(i%2==0){
-                cout<<"Discount on movie m["<<i<<"] : "<<dis_5;
-                
-            }
-            else if (i%2!=0){
-               cout<<"Discount on movie m["<<i<<"] : "<<dis_10; 
-               
-            }
-            else{
-                cout<<"You entered invalid movie name or invalid entry ";
-            }
-        }
-     }
-
-
-
-
-
-
-
-
-
-
+    p=pow(num1,num2);
+    cout<<num1<<" to raise power "<<num2<<" : "<<p;
 }

@@ -1,7 +1,18 @@
 #include<iostream>
 using namespace std;
+
+void sum(int num1,int num2); // prototype
+
 main(){
-    int arrayname[]={1,2,3,4,5};
-        cout<<"The second element is :"<<arrayname[1]<<endl;
-        cout<<"The fourth element is :"<<arrayname[3];
+    int n1,n2;
+    cout<<"Enter the first number : ";
+    cin >>n1;
+    cout<<"Enter the second number : ";
+    cin >>n2;
+    sum(n1,n2);
+
+}
+
+void sum(int num1,int num2){
+    cout<<"The sum is : "<<num1+num2;
 }

@@ -1,22 +1,16 @@
 #include<iostream>
- using namespace std;
-// Write a C++ program to change every letter in a given string with the letter following it 
-// in the alphabet (ie. a becomes b, p becomes q, z becomes a).
-// For Example:
-// Input: aslam
-// Output: btmbn
+using namespace std;
 
-// char ch='a';
-//     ch=ch+1;
-//     cout<<ch;
+float mul(float t){
+    t=t*5;
+    return t;
+
+}
+
 main(){
-    string word;
-    char s;
-    cout<<"Enter the word  : ";
-    cin>>word;
-    
-    for(int i=0;word[i]!='\0';i++){
-        s=word[i]+1;
-        cout<<s;
-    }
+    float n,t;
+    cout<<"Enter the number : ";
+    cin>> n;
+    t=mul(n);
+    cout<<t;
 }

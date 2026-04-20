@@ -1,21 +1,13 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 main(){
-    int number[5];
-    int max;
-    for(int i=0;i<5;i++){
-        cout<<"Enter the no. :";
-        cin>>number[i];
-    }
+    float num1,num2,mn;
+    cout<<"Enter the first number : ";
+    cin>>num1;
+    cout<<"Enter the secong number : ";
+    cin>>num2;
 
-    max=number[0];
-
-    for(int j=1;j<=4;j++){
-        if(max<number[j]){
-            max=number[j];
-        }
-    }
-
-    cout<<"Greater no. is : "<<max;
-
+    mn=min(num1,num2);
+    cout<<"Minimum number is : "<<mn;
 }

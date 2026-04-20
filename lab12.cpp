@@ -1,39 +1,30 @@
 #include <iostream>
 using namespace std;
-// Write a program that takes n numbers from the user, stores them in an array, and passes
-// them to a function that prints them in reverse order.
+
+void odd_even(int a);
+
 main()
 {
-    int no;
-    int n = 0;
+    cout << "Enter the no. : ";
+    int n;
+    cin >> n;
+    odd_even(n);
+}
 
-    cout << "Enter the amount of no. u want to store in array : ";
-    cin >> no;
+void odd_even(int a)
+{
+    int first_digit = a / 10000;
+    int second_digit = (a / 1000) % 10;
+    int third_digit = (a / 100) % 10;
+    int fourth_digit = (a / 10) % 10;
+    int fifth_digit = (a % 10);
+    int sum = first_digit + second_digit + third_digit + fourth_digit + fifth_digit;
 
-    if (no > 0)
-    {
-        
-        int number_in_array[no];
-        for (int i = 0; i < no; i++)
-        {
-            cout << "Enter " << i << " index no. : ";
-            cin >> number_in_array[i];
-        }
+    if(sum%2==0){
+        cout<<"Evenish";
 
-        for (int i = no - 1; i >= 0; i--)
-        {
-            n += 1;
-        }
-        n = n - 1;
-
-        for (n; n >= 0; n--)
-        {
-            cout << number_in_array[n];
-        }
     }
-    else
-    {
-        cout << "Please enter +ve no .You enterd a -ve \"" << no << "\" number.";
-        return 0;
+    else{
+        cout<<"Oddish";
     }
 }

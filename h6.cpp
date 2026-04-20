@@ -1,11 +1,42 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-main(){
-    int table_no=5,multiples;
-    cout<<"Enter the no. whose table you want : ";
-    
 
-    for(int x=1;x<11;x++){
-        cout<<table_no<<" * "<<x<<" = "<<table_no*x<<endl;
+// Function to calculate factorial of a digit
+int factorial(int n) {
+    int fact = 1;
+    for (int i = 1; i <= n; i++) {
+        fact = fact * i;
     }
+    return fact;
+}
+
+// Function to check if number is Strong
+bool isStrong(int num) {
+    int temp = num;
+    int sum = 0;
+
+    while (temp > 0) {
+        int digit = temp % 10;
+        sum = sum + factorial(digit);
+        temp = temp / 10;
+    }
+
+    if (sum == num) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int main() {
+    int number;
+    cin >> number;
+
+    if (isStrong(number)) {
+        cout << "Strong Number";
+    } else {
+        cout << "Not Strong Number";
+    }
+
+    return 0;
 }

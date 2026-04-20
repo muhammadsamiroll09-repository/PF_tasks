@@ -1,26 +1,11 @@
-#include<iostream>
+#include <iostream>
+#include <cmath>
 using namespace std;
-main(){
-    string letter;
-    bool value=false;
-    char ch;
-    cout<<"Enter a word :";
-    cin>>letter;
-    cout<<"Enter character :";
-    cin>>ch;
-
-    for(int i=0;letter[i]!='\0';i++){
-        if(ch==letter[i]){
-            cout<<"Found";
-            break;
-        }
-        else{
-            value=true;
-        }
-    }
-
-    if(value==true){
-        cout<<"Not found ";
-    }
-  
+main()
+{
+    float num1, sq;
+    cout << "Enter the number : ";
+    cin >> num1;
+    sq = sqrt(num1);
+    cout << "The square root of " << num1 << " : " << sq;
 }

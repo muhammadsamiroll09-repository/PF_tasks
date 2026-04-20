@@ -1,28 +1,38 @@
-#include<iostream>
+#include <iostream>
+#include <string>
 using namespace std;
-int main()
-{
-   float first_array[2];
-   int n;
-   cout<<"Enter two elements  for first array , one per line : "<<endl;
-   for(int i=0;i<2;i++){
-    cin>>first_array[i];
-   }
 
-   cout<<"Enter no of elements for second array : ";
-   cin>>n;
+// Function to convert number (1-99) to text
+string numToText(int num) {
+    string ones[10] = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
+    string tens[10] = {"", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+    string special[10] = {"Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
 
-   int second_array[n];
+    if (num >= 10 && num <= 19) {
+        return special[num - 10];
+    }
 
-   for(int i=0;i<n;i++){
-    cin>>second_array[i];
-   }
+    int ten = num / 10;
+    int one = num % 10;
 
-   cout<<"["<<first_array[0]<<",";
-   for(int i=0 ; i<n ; i++){
-    cout<<second_array[i]<<",";
-   }
+    if (ten == 0) {
+        return ones[one];
+    }
 
-   cout<<first_array[1]<<"]";
+    if (one == 0) {
+        return tens[ten];
+    }
 
+    return tens[ten] + ones[one];
+}
+
+int main() {
+    int number;
+    cout << "Enter a number (1-99): ";
+    cin >> number;
+
+    string result = numToText(number);
+    cout << result;
+
+    return 0;
 }
