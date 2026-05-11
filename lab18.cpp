@@ -1,21 +1,66 @@
-// Create a program that takes a string and returns a new string with all vowels removed.
-// Test Cases:
-// Input:
-// "I have never seen a thin person drinking Diet Coke." 
-// Output:
-// " hv nvr sn  thn prsn drnkng Dt Ck."
-
 #include<iostream>
 using namespace std;
-main(){
-    string text;
-    cout<<"Enter the text : "<<endl;
-    getline(cin,text);
-    for(int i=0;text[i]!='\0';i++){
-        if(text[i]=='a'||text[i]=='e'||text[i]=='i'||text[i]=='o'||text[i]=='u'||text[i]=='A'||text[i]=='E'||text[i]=='I'||text[i]=='O'||text[i]=='U'){
-            continue;
+const int colsize=5;
+// program to find coilumn whose sum is greater than the sum of all columns
+void largestcol(int arr[][colsize],int rows){
+      int sum[colsize]={0};
+
+
+      for(int i = 0; i < colsize; i++){
+      for(int j = 0; j < rows; j++){
+
+      sum[i]+=arr[j][i];
+      }
+      }
+
+      int max=sum[0];
+      for(int i=1;i<colsize;i++){
+        for(int j = 0; j < rows; j++){
+        if(sum[i]>max){
+            max=sum[i];
+            int temp = arr[j][0];
+            arr[j][0] = arr[j][i];
+            arr[j][i] = temp;
         }
-        cout<<text[i];
+        }// end of if
+      }
+     
+}
+
+main(){
+      int arr[100][colsize];
+      cout<<"Enter the no of rows : ";
+      int rows;
+      cin>>rows;
+
+      for(int i = 0; i < rows; i++){
+      for(int j = 0; j < colsize; j++){
+      cout << "Enter element at [" << i << "][" << j << "]: ";
+      cin >> arr[i][j];
+      }
+      }
+
+      cout<<"The matrix is : "<<endl;
+
+      for(int i = 0; i < rows; i++){
+      for(int j = 0; j < colsize; j++){
+      cout<<arr[i][j]<<"\t";
+      }
+      cout<<endl;
     }
 
-} 
+      largestcol(arr,rows);
+
+
+      cout<<"Updated matrix : "<<endl;
+       for(int i = 0; i < rows; i++){
+      for(int j = 0; j < colsize; j++){
+      cout<<arr[i][j]<<"\t";
+      }
+      cout<<endl;
+      }
+
+
+
+
+}

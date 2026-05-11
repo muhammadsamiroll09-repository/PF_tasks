@@ -1,32 +1,47 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-// Implement a program that uses a pointer to reverse a dynamically allocated array.
+const int gridSize = 3;
+char board[gridSize][gridSize] = {{'O', 'O', 'O'},
+                                  {'X', 'O', 'X'},
+                                  {'X', 'X', 'O'}};
+
+char winner( char symbol){
+    //rows
+    for(int i=0;i< gridSize ; i++){
+        if(board[i][0]==symbol && board[i][1]==symbol && board[i][2]==symbol ) {
+            return true;
+          }
+    }
+
+          for(int i=0;i< gridSize ; i++){
+        if(board[0][i]==symbol && board[1][i]==symbol && board[2][i]==symbol ) {
+            return true;
+          }
+     }
+         
+        if(board[1][1]==symbol && board[2][2]==symbol && board[3][3]==symbol ) {
+            return true;
+        }
+     
+
+            
+        if(board[0][1]==symbol && board[1][1]==symbol && board[2][2]==symbol ) {
+            return true;
+          }
+
+
+     return false;
+        
+}
+
 main(){
-    int n;
-    cout<<"Enter amount of numbers you want to enter : ";
-    cin>>n;
-    int array[n];
-   
-  
-    for(int i=0;i<n;i++){
-        cout<<"Enter number "<<i+1<<" : ";
-        cin>>*(array+i); // addess arry is deref by *
+    if(winner('X')){
+        cout<<"Winner Player is X";
     }
-
-    int  *start=array;
-    int *end=array+n-1;
-
-    while(start<end){
-        int temp=*start;
-        *start=*end;
-        *end=temp;
-        start++;// increment in address
-        end--;  // decrement in address
-    }
-  
-    for(int i=0;i<n;i++){
-        cout<<"Number "<<i+1<<" : "<<*(array+i)<<endl;
-    }
-   
-
+    else if(winner('O')){
+         cout<<"Winner Player is O";
+     }
+     else{
+        cout<<"No one is winner";
+     }
 }

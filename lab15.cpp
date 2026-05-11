@@ -1,38 +1,36 @@
 #include <iostream>
-#include <string>
 using namespace std;
+//Program for to show whether the football goes into the pool or miss the goal
+bool goal(string feild[][16]){
 
-// Function to convert number (1-99) to text
-string numToText(int num) {
-    string ones[10] = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
-    string tens[10] = {"", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
-    string special[10] = {"Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
-
-    if (num >= 10 && num <= 19) {
-        return special[num - 10];
+    for(int i=1;i<=2;i++){
+        for(int j=2;j<=4;j++){
+            if(feild[i][j]=="O"){
+                return true;
+            }
+        }
     }
 
-    int ten = num / 10;
-    int one = num % 10;
-
-    if (ten == 0) {
-        return ones[one];
-    }
-
-    if (one == 0) {
-        return tens[ten];
-    }
-
-    return tens[ten] + ones[one];
+    return false;
 }
 
-int main() {
-    int number;
-    cout << "Enter a number (1-99): ";
-    cin >> number;
+main()
+{
+    string feild[7][16] = {
+        {"", "", "", "", "", "", ""},
+        {"", "#", "", "", "",   "#", ""},
+        {"", "#", "", "", "O",  "#", ""},
+        {"", "#", "#", "#", "#","#", ""},
+        {"", "", "",   "#", "", "", ""},
+        {"", "", "",   "#", "", "", ""},
+        {"", "", "",   "#", "", "", ""}};
 
-    string result = numToText(number);
-    cout << result;
-
-    return 0;
+    if (goal(feild))
+    {
+        cout << "Goal";
+    }
+    else
+    {
+        cout << "Miss";
+    }
 }

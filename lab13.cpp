@@ -1,42 +1,45 @@
-#include <iostream>
-#include<iomanip>
+#include<iostream>
+#include<conio.h>
 using namespace std;
+// battleship game entered the coordinate in the form of like A1,B3 etc if that coordinate contains 
+// *(ship) BOOM will be displyed on the console and if .(water) will be there then splash will be
+// displayed.
+string boomsplash(string str[][5], string coordinate){
+    string w;
+    int i=coordinate[0]-'A'; //=0 ascii value of of 'A' is 65
+    int j=coordinate[1]-'0'; //= ascii value of of '0' is 48
+    j--;
+    
 
-void poolstate(float V, float P1, float P2, float N);
+    if(str[i][j]=="*"){
+    w="BOOM";
+    return w;
+    }
 
-main()
-{
-    cout << "Enter the capacity of water that pool can store : ";
-    float V;
-    cin >> V;
-
-    cout << "Enter flow rate of P1 : ";
-    float P1, P2, N;
-    cin >> P1;
-
-    cout << "Enter flow rate of P2 : ";
-    cin >> P2;
-
-    cout << "the hours that the worker is absent : ";
-    cin >> N;
-
-    poolstate(V, P1, P2, N);
+    if(str[i][j]=="."){
+    w="SPLASH";
+    return w;
+    }
+    
+    return "Invalid coordinates";
+  
 }
 
-void poolstate(float V, float P1, float P2, float N)
-{
-    float total_water = N * (P1 + P2);
-    if (total_water <= V)
-    {
-        float per1 = (total_water / V) * 100;
-        cout << "The pool is " << fixed << setprecision(0) << per1 << " %";
+main(){
+string str[5][5]{  /*press 1,2,3,4,5 with any alphabet*/
+  /*A*/  {"*",".",".",".","."},
+  /*B*/  {".","*",".",".","."},
+  /*C*/  {".",".","*",".","."},
+  /*D*/  {".",".",".","*","."},
+  /*E*/  {".",".",".",".","*"}
+};
 
-        cout << "\nPipe 1's contribution " << (P1 * N / total_water) * 100 << "% ";
-        cout << "\nPipe 2's contribution " << (P2 * N / total_water) * 100 << "% ";
-    }
-    else
-    {
-        float overflow =  total_water - V;
-        cout << "For " << N << " hours, the pool overflows with " << overflow << " liters ";
-    }
+while(true){
+string coordinates;
+cout<<"Enter the coordinates : ";
+cin>>coordinates;
+string s=boomsplash(str,coordinates);
+cout<<s<<endl;
+
+}
 }
