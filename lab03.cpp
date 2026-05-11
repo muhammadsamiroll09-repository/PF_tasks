@@ -1,21 +1,17 @@
 #include<iostream>
 using namespace std;
+//  Create a function that swaps two variables using pointers.
+void swap(int *a,int *b){
+    int temp=*a;
+    *a=*b;
+    *b=temp;
+}
 main(){
-     string one_word;
-     string two_word;
-
-     cout<<"Enter the first word : ";
-     cin>>one_word;
-
-      cout<<"Enter the second word : ";
-     cin>>two_word;
-
-     if(one_word==two_word){
-        cout<<"Yes, the words are same.";
-     }
-
-     else{
-        cout<<"No, the words are different.";
-     }
-
+  int a,b;
+  cout<<"Enter the first no : ";
+  cin>>a;   
+  cout<<"Enter the second no : ";
+  cin>>b;
+  swap(&a,&b);
+  cout<<a<<"\t"<<b;
 }

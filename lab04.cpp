@@ -1,17 +1,17 @@
 #include<iostream>
 using namespace std;
+// Create a function that swaps two variables using references.
+void swap(int &a,int &b){
+    int temp=a;
+    a=b;
+    b=temp;
+}
 main(){
-     string password;
-    
-     cout<<"Enter the password : ";
-     cin>>password;
-
-     if(password=="password"){
-        cout<<"Password is unlocked.";
-     }
-
-     else{
-        cout<<"Password is wrong.";
-     }
-
+  int a,b;
+  cout<<"Enter the first no : ";
+  cin>>a;   
+  cout<<"Enter the second no : ";
+  cin>>b;
+  swap(a,b);
+  cout<<a<<"\t"<<b;
 }

@@ -1,18 +1,9 @@
 #include<iostream>
 using namespace std;
-
-void sum(int num1,int num2); // prototype
-
 main(){
-    int n1,n2;
-    cout<<"Enter the first number : ";
-    cin >>n1;
-    cout<<"Enter the second number : ";
-    cin >>n2;
-    sum(n1,n2);
-
-}
-
-void sum(int num1,int num2){
-    cout<<"The sum is : "<<num1+num2;
+    int arr[5]={1,2,3,4,5};
+    int* pointer =arr;
+    for (int i=0;i<5;i++){
+        cout<<*(pointer+i)<<"\t\t";
+    }
 }

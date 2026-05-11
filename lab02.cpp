@@ -1,20 +1,14 @@
 #include<iostream>
 using namespace std;
 main(){
-
-     int a,b;
-     cout<<"Enter the first Integer : ";
-     cin>>a;
-
-     cout<<"Enter the second Integer :";
-     cin>>b;
-
-     if(a>b){
-        cout<<a<<" is greater than "<<b;
-     }
-     else{
-        cout<<b<<" is greater than "<<a;
-     }
-
-
+    int a=10;
+    cout<<"Pre value of a "<<a<<endl;
+    int &b=a;
+    b=12;
+    cout<<"Modified value of a "<<a<<endl;
+    cout<<"===================="<<endl<<
+          "===================="<<endl;
+    int *ptr= &b;
+    b=20;
+    cout<<"value of b "<<*ptr;   
 }
